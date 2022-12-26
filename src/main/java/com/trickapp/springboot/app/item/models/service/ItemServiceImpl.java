@@ -7,13 +7,15 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.trickapp.springboot.app.item.models.Item;
 import com.trickapp.springboot.app.item.models.Product;
 
-@Service
+@Service("serviceRestTemplate")
+@Primary
 public class ItemServiceImpl implements ItemService {
 	
 	@Autowired

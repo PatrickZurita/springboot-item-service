@@ -13,16 +13,16 @@ import com.trickapp.springboot.app.item.models.service.ItemService;
 
 @RestController
 public class ItemController {
-	
+
 	@Autowired
-    @Qualifier("serviceFeign")
+	@Qualifier("serviceRestTemplate")
 	private ItemService itemService;
-	
+
 	@GetMapping("/getAll")
-	public List<Item> getAll(){
+	public List<Item> getAll() {
 		return itemService.findAll();
 	}
-	
+
 	@GetMapping("/getById/{id}/quantity/{quantity}")
 	public Item getById(@PathVariable Long id, @PathVariable Integer quantity) {
 		return itemService.findById(id, quantity);
