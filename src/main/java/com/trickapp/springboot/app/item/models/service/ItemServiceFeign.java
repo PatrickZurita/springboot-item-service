@@ -11,10 +11,10 @@ import com.trickapp.springboot.app.item.models.Item;
 
 @Service("serviceFeign")
 public class ItemServiceFeign implements ItemService {
-	
+
 	@Autowired
 	private RestClientProduct feignClient;
-	
+
 	@Override
 	public List<Item> findAll() {
 		return feignClient.getAll().stream().map(p -> new Item(p, 1)).collect(Collectors.toList());

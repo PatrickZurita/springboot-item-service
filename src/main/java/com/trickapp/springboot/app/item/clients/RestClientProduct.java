@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.trickapp.springboot.app.item.models.Product;
 
-@FeignClient(name="products-service")
+@FeignClient(name = "products-service")
 public interface RestClientProduct {
 	
 	@GetMapping("/getAll")
